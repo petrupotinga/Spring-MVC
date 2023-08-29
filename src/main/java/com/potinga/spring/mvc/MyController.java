@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
+@RequestMapping("/employee")
 public class MyController {
     @RequestMapping("/")
     public String showFIrstView() {
@@ -36,7 +37,7 @@ public class MyController {
     @RequestMapping("/showDetails")
     public String showEmpDetails(@RequestParam("employeeName")
                                  String empName, Model model) {
-        empName = "Mr. " + empName;
+        empName = "Mr. " + empName + "!";
         model.addAttribute("nameAttribute", empName);
         return "show-emp-details-view";
     }
