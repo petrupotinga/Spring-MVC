@@ -4,6 +4,7 @@ public class Employee {
     private String name;
     private String surname;
     private int salary;
+    private String department;
 
     public Employee() {
     }
@@ -32,12 +33,21 @@ public class Employee {
         this.salary = salary;
     }
 
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", salary=" + salary +
+                ", department='" + department + '\'' +
                 '}';
     }
 }
