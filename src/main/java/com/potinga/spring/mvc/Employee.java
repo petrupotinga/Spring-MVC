@@ -27,6 +27,8 @@ public class Employee {
         carBrands.put("BMW", "BMW");
         carBrands.put("Audi", "Audi");
         carBrands.put("Mercedes-Benz", "Mercedes-Benz");
+        carBrands.put("Ford EDGE", "Ford");
+        carBrands.put("Renault Megane", "Renault");
 
         languageList = new HashMap<>();
         languageList.put("English", "EN");
