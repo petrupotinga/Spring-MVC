@@ -1,5 +1,7 @@
 package com.potinga.spring.mvc;
 
+import com.potinga.spring.mvc.validation.CheckEmail;
+
 import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,8 +21,10 @@ public class Employee {
     private Map<String, String> carBrands;
     private String[] languages;
     private Map<String, String> languageList;
-    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}-\\d{2}", message="please use pattern XXX-XX-XX-XX")
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}-\\d{2}", message = "please use pattern XXX-XX-XX-XX")
     private String phoneNumber;
+    @CheckEmail(value = "abc.com", message = "email must ends with abc.com")
+    private String email;
 
     public Employee() {
         departments = new HashMap<>();
@@ -39,10 +43,7 @@ public class Employee {
         languageList.put("English", "EN");
         languageList.put("Deutch", "DE");
         languageList.put("French", "FR");
-
-
     }
-
 
     public String getName() {
         return name;
@@ -122,6 +123,14 @@ public class Employee {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
