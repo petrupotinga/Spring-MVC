@@ -9,7 +9,7 @@
 
 <h2>Dear Employee, Please enter your details</h2>
 
-<form:form action="showDetails" modelAttribute="employee">
+<form:form action="showDetails" modelAttribute="employee" method = "get">
     Name <form:input path="name"/>
     <form:errors path="name"/>
     <br><br>
